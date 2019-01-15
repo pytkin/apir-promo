@@ -1,4 +1,4 @@
-# apir-promo
+# apir-web-page
 
 ## Project setup
 
