@@ -1,0 +1,383 @@
+
+.contacts-screen {
+  .page-wrap {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    width: 100%;
+  }
+
+  .page-header {
+    position: relative;
+    min-height: 315px;
+    overflow: hidden;
+
+    .bgs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(31, 81, 118, 0.5) 0%, rgba(40, 104, 151, 0.35) 40%, rgba(0, 0, 0, 0) 100%);
+        z-index: 2;
+      }
+
+      .bg-wrap {
+        will-change: transform;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: transform 0.4s;
+      }
+
+      .bg1,
+      .bg2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .bg1 {
+        background: url('../../images/contacts-page-header-bg1.jpg') no-repeat top center/cover;
+      }
+
+      .bg2 {
+        background: url('../../images/contacts-page-header-bg2.jpg') no-repeat top center/cover;
+        transform: translateX(calc(100% + 1px));
+      }
+    }
+
+    &.page-header0 {
+      .bg-wrap {
+        transform: translateX(0);
+      }
+    }
+
+    &.page-header1 {
+      .bg-wrap {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  .page-content {
+    padding: 24px 38px 40px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #6A6E77;
+
+    .page-number {
+      font-size: 20px;
+      line-height: 32px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      color: #3E485C;
+    }
+
+    .page-title {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 25px;
+      font-weight: 800;
+      color: #3E485C;
+    }
+
+    .vue-map-container {
+      display: none;
+      overflow: hidden;
+    }
+  }
+
+  .nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+
+      + li {
+        margin-left: 16px;
+      }
+
+      a {
+        color: #3E485C;
+      }
+
+      &.active {
+        border-bottom-color: #F9423A;
+
+        a {
+          color: #F9423A;
+        }
+      }
+    }
+  }
+
+  ~ .footer {
+    display: none;
+  }
+
+  &.screen-enter-active {
+    transition: all 2s;
+    overflow: hidden;
+
+    .page-header {
+      .bgs {
+        animation: slide-rtl-v-in 1s forwards;
+      }
+    }
+
+    .page-content {
+      .page-number {
+        opacity: 0;
+        animation: slide-ttb-half-item-in 1s forwards;
+      }
+
+      .page-title {
+        opacity: 0;
+        animation: slide-rtl-half-screen-in 1s forwards;
+      }
+
+      .vue-map {
+        opacity: 0;
+        animation: slide-btt-in 1s forwards;
+      }
+
+      .nav-tabs li {
+        opacity: 0;
+
+        &:nth-of-type(1) {
+          animation: slide-rtl-half-screen-in 1s 0.2s forwards;
+        }
+        &:nth-of-type(2) {
+          animation: slide-rtl-half-screen-in 1s 0.6s forwards;
+        }
+        &:nth-of-type(3) {
+          animation: slide-rtl-half-screen-in 1s 0.8s forwards;
+        }
+        &:nth-of-type(4) {
+          animation: slide-rtl-half-screen-in 1s 1s forwards;
+        }
+      }
+
+      .tab-content {
+        opacity: 0;
+        animation: slide-rtl-half-screen-in 1s 0.4s forwards;
+      }
+    }
+  }
+
+  &.screen-leave-active {
+    transition: all 1.6s;
+
+    .page-header {
+      overflow: hidden;
+
+      .bgs {
+        animation: slide-rtl-v-out 1s 0.5s forwards;
+      }
+    }
+
+    .page-content {
+      overflow: hidden;
+
+      .page-number {
+        animation: slide-ttb-half-item-out 0.3s forwards;
+      }
+
+      .page-title {
+        animation: slide-rtl-v-half-screen-out 1s forwards;
+      }
+
+      .vue-map {
+        animation: slide-ttb-out 1s forwards;
+      }
+
+      .vue-tabs {
+        animation: slide-rtl-v-half-screen-out 1s 0.2s forwards;
+      }
+    }
+  }
+}
+
+@media (--md) {
+  .contacts-screen {
+    .page-header {
+      min-height: 337px;
+      background-position: center;
+
+      .bgs::before {
+        display: none;
+      }
+    }
+
+    .page-content {
+      padding: 38px 32px 110px;
+      font-size: 16px;
+      line-height: 24px;
+
+      .page-number {
+        margin-bottom: 27px;
+      }
+
+      .page-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 16px;
+      }
+
+      .vue-map-container {
+        display: block;
+        height: 192px;
+        width: 100%;
+        filter: grayscale(1);
+      }
+    }
+
+    .nav-tabs {
+      margin-bottom: 24px;
+
+      li {
+        font-size: 18px;
+        line-height: 38px;
+
+        + li {
+          margin-left: 40px;
+        }
+      }
+    }
+
+    .tab-content {
+      font-weight: 300;
+
+      p:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
+
+    ~ .footer {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts-screen + .page-transition-indicator {
+    opacity: 0;
+  }
+}
+
+@media (--lg) {
+  .contacts-screen {
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .page-header {
+      position: absolute;
+      top: 92px;
+      right: 97px;
+      bottom: 96px;
+      width: 528px;
+      z-index: 1000;
+    }
+
+    .page-content {
+      flex: 1 1 auto;
+      padding: 169px 304px 294px 0;
+      margin-left: 96px;
+      width: calc(100% - 96px);
+
+      .page-number {
+        margin-bottom: 24px;
+      }
+
+      .tab-content p:last-of-type {
+        margin-bottom: 47px;
+      }
+
+      .vue-map-container {
+        position: absolute;
+        left: -96px;
+        bottom: 0;
+        height: 294px;
+      }
+    }
+  }
+}
+
+@media (--xl) {
+  .contacts-screen {
+    .page-wrap {
+      width: 100%;
+      max-width: 1632px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      top: 126px;
+      right: 0;
+      bottom: 90px;
+      width: 728px;
+    }
+
+    .page-content {
+      padding: 230px 0 430px 0;
+      margin-left: 0;
+      width: calc(100% - 741px);
+      max-width: 1632px;
+
+      .page-number {
+        margin-bottom: 40px;
+      }
+
+      .page-title {
+        font-size: 40px;
+        line-height: 44px;
+        margin-bottom: 8px;
+      }
+
+      .tab-content p:last-of-type {
+        margin-bottom: 96px;
+      }
+
+      .vue-map-container {
+        margin-left: 0;
+        left: calc(-50vw + 50%);
+        right: 0;
+        width: auto;
+        height: 430px;
+      }
+    }
+
+    ~ .footer {
+      justify-content: flex-end;
+
+      .page-transition-handle {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@mixin font-calc($font-size, $base-size: $font-size-root) {
+  font-size: ($font-size / $base-size) + rem;
+}
+
+@mixin lh-calc($line-height, $font-size: $font-size-root, $base-size: $font-size-root) {
+  @if ($font-size != $font-size-root) {
+    line-height: ($line-height / $font-size);
+  } @else {
+    line-height: ($line-height / $base-size);
+  }
+}

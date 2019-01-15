@@ -1,0 +1,136 @@
+
+.footer {
+  position: absolute;
+  bottom: 17px;
+  left: 50%;
+  width: calc(100vw - 48px);
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .page-transition-handle {
+    display: flex;
+    align-items: center;
+
+    .transition-indicator {
+      flex: 1 1 auto;
+      background-color: #dadada;
+      height: 1px;
+      width: calc(45vw - 144px);
+      margin-right: 32px;
+      display: none;
+    }
+
+    .btn {
+      background: svg-load('../../images/mobile-next-arrow.svg') no-repeat center;
+      border: 1px solid #3E485C;
+      border-radius: 32px;
+      text-indent: -9999px;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .social-services {
+    display: none;
+
+    a {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+
+      &.vk {
+        background: svg-load('../../images/vk-icon.svg') no-repeat center;
+      }
+
+      &.facebook {
+        background: svg-load('../../images/facebook-icon.svg') no-repeat center;
+      }
+
+      &.instagram {
+        background: svg-load('../../images/instagram-icon.svg') no-repeat center;
+      }
+    }
+
+    a + a {
+      margin-left: 16px;
+    }
+  }
+}
+
+@media (--md) {
+  .footer {
+    bottom: 32px;
+    width: calc(100vw - 56px);
+    justify-content: space-between;
+
+    .page-transition-handle {
+      .btn {
+        display: none;
+      }
+    }
+
+    .social-services {
+      display: inline-block;
+    }
+  }
+}
+
+@media (--lg) {
+  .footer {
+    bottom: 42px;
+    width: calc(100vw - 194px);
+  }
+}
+
+@media (--xl) {
+  .footer {
+    bottom: 67px;
+    width: 100%;
+    max-width: 1632px;
+
+    .page-transition-handle {
+      .transition-indicator {
+        display: block;
+        max-width: 727px;
+      }
+
+      .btn {
+        width: auto;
+        height: auto;
+        display: inline-block;
+        outline: none;
+        border: none;
+        background-color: #EBEFF6;
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #3E485C;
+        padding: 19.5px 40px 17.5px 38px;
+        background: #EBEFF6 svg-load('../../images/right-arrow.svg', stroke=#3E485C) no-repeat right 28px center;
+        font-weight: 800;
+        text-indent: 0;
+        border-radius: 0;
+
+        &:hover {
+          background-color: color(#EBEFF6 l(- 2%));
+        }
+
+        &:focus {
+          background-color: color(#EBEFF6 l(- 5%));
+        }
+      }
+    }
+
+    .social-services {
+      position: relative;
+      bottom: -27px;
+    }
+  }
+}

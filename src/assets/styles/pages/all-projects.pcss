@@ -1,0 +1,234 @@
+.all-projects-screen {
+  position: relative;
+  z-index: 6;
+  background-color: #F5F6F9;
+
+  .page-content {
+    padding: 104px 24px 24px;
+  }
+
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    h2 {
+      flex: 0 0 auto;
+      color: #1E1F1F;
+      font-size: 24px;
+      line-height: 28px;
+      margin: 0 0 8px;
+    }
+
+    .project-filters {
+      flex: 1 0 auto;
+      display: none;
+
+      .dropdown {
+        margin-bottom: 8px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .v-select .dropdown-toggle {
+      height: 32px;
+    }
+
+    .v-select input[type="search"] {
+      padding-left: 13px;
+    }
+
+    .v-select.unsearchable input[type="search"] {
+      opacity: 1;
+      font-size: 14px;
+
+      &::placeholder {
+        opacity: 1;
+        color: #000;
+      }
+    }
+
+    .dropdown-menu {
+      font-size: 14px;
+      padding-top: 0;
+
+      a {
+        padding-left: 16px;
+      }
+    }
+
+    .v-select .vs__actions {
+      padding-right: 12px;
+    }
+  }
+
+  .projects-wrap {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      display: block;
+      flex: 0 0 auto;
+      height: auto;
+      padding-bottom: 63.65%;
+      position: relative;
+      margin-bottom: 16px;
+
+      .bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .title {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: #fff;
+        padding: 0 48px;
+        line-height: 22px;
+        font-size: 22px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ~ .footer {
+    display: none;
+  }
+}
+
+@media (--md) {
+  .all-projects-screen {
+    .page-content {
+      padding: 143px 32px 32px;
+    }
+
+    .page-header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+
+      h2 {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 0;
+      }
+
+      .project-filters {
+        /* display: flex; */
+        justify-content: flex-end;
+
+        .dropdown {
+          flex: 1 0 auto;
+          max-width: 140px;
+          margin-bottom: 0;
+
+          + .dropdown {
+            margin-left: 16px;
+          }
+
+          .dropdown-menu {
+            max-width: 140px;
+            min-width: auto;
+          }
+        }
+      }
+    }
+
+    .projects-wrap {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+        padding-bottom: 27.5%;
+
+        &:nth-of-type(2n) {
+          margin-right: 0;
+        }
+
+        &:nth-last-of-type(2) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (--lg) {
+  .all-projects-screen {
+    .page-content {
+      padding: 143px 185px 120px 176px;
+    }
+
+    .page-header {
+      margin-bottom: 32px;
+
+      h2 {
+        font-size: 40px;
+        line-height: 56px;
+        margin-bottom: 0;
+      }
+    }
+
+    .projects-wrap {
+      .item {
+        width: calc(50% - 12px);
+        margin-right: 24px;
+        margin-bottom: 24px;
+        padding-bottom: 31.2%;
+
+        .title {
+          padding: 0 56px;
+          line-height: 42px;
+          font-size: 42px;
+        }
+      }
+    }
+  }
+}
+
+@media (--xl) {
+  .all-projects-screen {
+    .page-content {
+      padding: 192px 0 140px;
+      max-width: 1632px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .projects-wrap {
+      .item {
+        width: calc(50% - 16px);
+        margin-right: 32px;
+        margin-bottom: 32px;
+
+        .title {
+          padding: 0 90px;
+          line-height: 56px;
+          font-size: 56px;
+        }
+      }
+    }
+  }
+}

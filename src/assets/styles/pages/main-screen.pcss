@@ -1,0 +1,346 @@
+.main-screen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 282px 24px 56px;
+
+  .promo-section {
+    position: relative;
+    max-width: 395px;
+    z-index: 3;
+
+    h2 {
+      line-height: 28px;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #3E485C;
+    }
+
+    h3 {
+      line-height: 28px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3E485C;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 18px;
+      font-size: 14px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn {
+      display: block;
+      margin-top: 24px;
+      line-height: 19px;
+      text-align: center;
+      border-radius: 0;
+
+      &:hover {
+        background-color: color($brand-primary l(- 5%));
+      }
+
+      &:focus {
+        background-color: color($brand-primary l(- 10%));
+      }
+    }
+
+    .slide-wrap {
+      margin-bottom: 24px;
+
+      .slide-item {
+        width: 100%;
+      }
+
+      .flickity-page-dots {
+        margin-top: 24px;
+        height: 2px;
+        position: static;
+        text-align: left;
+
+        li {
+          display: inline-block;
+          background: #DADADA;
+          overflow: hidden;
+          width: 24px;
+          height: 2px;
+          vertical-align: top;
+          border-radius: 0;
+          margin-right: 0;
+          margin-left: 0;
+
+          + li {
+            margin-left: 16px;
+          }
+
+          &.is-selected {
+            background-color: #3E485C;
+          }
+        }
+      }
+    }
+  }
+
+  .walking-man {
+    position: absolute;
+    bottom: 57px;
+    right: 72px;
+    width: 101px;
+    height: 55px;
+    background: svg-load('../../images/main-screen-walking-man.svg') no-repeat center/cover;
+    z-index: 2;
+  }
+
+  .planets {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 233px;
+    z-index: 2;
+
+    > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  .bg {
+    position: absolute;
+    background: radial-gradient(651.33px at 50% 22.84%, #fff 0%, #fff 61.26%, #F4F7FE 100%);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &.screen-enter-active {
+    transition: all 2s;
+    overflow: hidden;
+
+    .walking-man {
+      opacity: 0;
+      animation: fade-in 1s 0.6s forwards;
+    }
+
+    .bg {
+      animation: fade-in 1s forwards;
+      opacity: 0;
+    }
+
+    .promo-section h2 {
+      animation: slide-rtl-in 1s 0.2s forwards;
+      opacity: 0;
+    }
+
+    .promo-section .news-wrap {
+      animation: slide-rtl-in 1s 0.4s forwards;
+      opacity: 0;
+    }
+
+    .promo-section .btn {
+      animation: slide-rtl-in 1s 0.6s forwards;
+      opacity: 0;
+    }
+
+    .planets {
+      #yellow-planet,
+      #blue-planet,
+      #gray-planet,
+      #green-planet,
+      #red-planet {
+        opacity: 0;
+        transform-origin: top;
+        animation: show-planet 1s 1s forwards;
+      }
+
+      #yellow-planet-line,
+      #blue-planet-line,
+      #gray-planet-line,
+      #green-planet-line,
+      #red-planet-line {
+        opacity: 0;
+        transform-origin: center;
+        animation: show-planet-line 1s 1s forwards;
+      }
+    }
+  }
+
+  &.screen-leave-active {
+    transition: all 2s;
+
+    .walking-man {
+      animation: fade-in 1s 0.6s forwards reverse;
+    }
+
+    .bg {
+      animation: fade-in 1s forwards reverse;
+    }
+
+    .promo-section {
+      overflow: hidden;
+
+      h2 {
+        animation: slide-rtl-v-out 1s 0.2s forwards;
+      }
+
+      .news-wrap {
+        animation: slide-rtl-v-out 1s 0.4s forwards;
+      }
+
+      .btn {
+        animation: slide-rtl-v-out 1s 0.6s forwards;
+      }
+    }
+
+    .planets {
+      #yellow-planet,
+      #blue-planet,
+      #gray-planet,
+      #green-planet,
+      #red-planet {
+        transform-origin: top;
+        animation: hide-planet 1s 1s forwards;
+      }
+
+      #yellow-planet-line,
+      #blue-planet-line,
+      #gray-planet-line,
+      #green-planet-line,
+      #red-planet-line {
+        transform-origin: center;
+        animation: hide-planet-line 1s 1s forwards;
+      }
+    }
+  }
+}
+
+@media (--md) {
+  .main-screen {
+    padding: 552px 32px 118px;
+
+    .promo-section {
+      h2 {
+        line-height: 40px;
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .btn {
+        margin-top: 32px;
+      }
+
+      .slide-wrap {
+        .flickity-page-dots {
+          li {
+            width: 64px;
+          }
+        }
+      }
+    }
+
+    .planets {
+      width: 372px;
+      height: 480px;
+    }
+
+    .walking-man {
+      top: 576px;
+      right: 119px;
+    }
+  }
+}
+
+@media (--lg) {
+  .main-screen {
+    padding: 282px 96px 174px;
+
+    .planets {
+      left: auto;
+      right: 14%;
+      width: 464px;
+      height: 606px;
+      transform: translateX(0);
+    }
+
+    .walking-man {
+      top: auto;
+      bottom: 160px;
+      left: 38%;
+    }
+  }
+}
+
+@media (--xl) {
+  .main-screen {
+    padding: 112px 144px 115px 144px;
+    min-height: 1080px;
+
+    .promo-section {
+      max-width: 495px;
+
+      h2 {
+        font-size: 40px;
+        line-height: 44px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .btn {
+        margin-top: 40px;
+      }
+
+      .slide-wrap {
+        .flickity-page-dots {
+          height: 4px;
+
+          li {
+            height: 4px;
+          }
+        }
+      }
+    }
+
+    .walking-man {
+      bottom: 187px;
+      left: 39%;
+      width: 134.67px;
+      height: 73.29px;
+    }
+
+    .planets {
+      right: 9.5%;
+      width: 618px;
+      height: 808px;
+    }
+  }
+}
