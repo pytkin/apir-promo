@@ -29,7 +29,9 @@ export default new Router({
       // this generates a separate chunk (contacts.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "directionsAll" */ "./views/DirectionsAll.vue")
+        import(
+          /* webpackChunkName: "directionsAll" */ "./views/DirectionsAll.vue"
+        )
     },
     {
       path: "/technologies",
@@ -38,7 +40,9 @@ export default new Router({
       // this generates a separate chunk (contacts.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "technologies" */ "./views/Technologies.vue")
+        import(
+          /* webpackChunkName: "technologies" */ "./views/Technologies.vue"
+        )
     },
     {
       path: "/projects",

@@ -15,35 +15,68 @@
       <div class="page-header">
         <h2>Все проекты</h2>
         <div class="project-filters">
-          <v-select v-model="industryFilter" :searchable="false" :options="['Все']" placeholder="Отрасль"></v-select>
-          <v-select v-model="directionFilter" :searchable="false" :options="['Все']" placeholder="Направление"></v-select>
-          <v-select v-model="technologyFilter" :searchable="false" :options="['Все']" placeholder="Технология"></v-select>
+          <v-select
+            v-model="industryFilter"
+            :searchable="false"
+            :options="['Все']"
+            placeholder="Отрасль"
+          ></v-select>
+          <v-select
+            v-model="directionFilter"
+            :searchable="false"
+            :options="['Все']"
+            placeholder="Направление"
+          ></v-select>
+          <v-select
+            v-model="technologyFilter"
+            :searchable="false"
+            :options="['Все']"
+            placeholder="Технология"
+          ></v-select>
         </div>
       </div>
       <div class="projects-wrap">
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }"></div>
-          <div class="title">Комплексная система<br>управления отходами</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image1 + ')' }"
+          ></div>
+          <div class="title">Комплексная система<br />управления отходами</div>
         </a>
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }"></div>
-          <div class="title">Мониторинг<br>культуры</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image2 + ')' }"
+          ></div>
+          <div class="title">Мониторинг<br />культуры</div>
         </a>
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }"></div>
-          <div class="title">Спортивный<br>портал</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image3 + ')' }"
+          ></div>
+          <div class="title">Спортивный<br />портал</div>
         </a>
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }"></div>
-          <div class="title">Спортивная<br>академия</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image4 + ')' }"
+          ></div>
+          <div class="title">Спортивная<br />академия</div>
         </a>
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image5 + ')' }"></div>
-          <div class="title">Управление<br>спортивными объектами</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image5 + ')' }"
+          ></div>
+          <div class="title">Управление<br />спортивными объектами</div>
         </a>
         <a class="item" href="#" target="_blank" rel="noopener nofollow">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image6 + ')' }"></div>
-          <div class="title">Управление<br>мероприятиями</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image6 + ')' }"
+          ></div>
+          <div class="title">Управление<br />мероприятиями</div>
         </a>
       </div>
     </div>

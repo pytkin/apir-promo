@@ -1,10 +1,17 @@
 <template>
   <div id="app" class="site-wrapper">
-    <Header :class="[
-      $route.name != 'home' && $route.name != 'all-projects' && $route.name != 'about-more' && $route.name != 'all-directions' ? 'inner-page' : '',
-      $route.name == 'about-more' ? 'about-more-inner-page' : '',
-      $route.name == 'all-directions' ? 'directions-all-inner-page' : ''
-    ]" />
+    <Header
+      :class="[
+        $route.name != 'home' &&
+        $route.name != 'all-projects' &&
+        $route.name != 'about-more' &&
+        $route.name != 'all-directions'
+          ? 'inner-page'
+          : '',
+        $route.name == 'about-more' ? 'about-more-inner-page' : '',
+        $route.name == 'all-directions' ? 'directions-all-inner-page' : ''
+      ]"
+    />
     <MobileMenuOverlay :show="showMobileOverlay" />
     <transition
       name="screen"
@@ -130,6 +137,5 @@ export default {
   }
 };
 </script>
-
 
 <style lang="pcss" src="./assets/styles/main.pcss" />

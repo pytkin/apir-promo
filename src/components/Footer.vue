@@ -1,4 +1,3 @@
-
 <template>
   <footer class="footer">
     <div class="page-transition-handle">
@@ -8,7 +7,12 @@
     <nav class="social-services">
       <a href="#" target="_blank" rel="noopener noreferer" class="vk"></a>
       <a href="#" target="_blank" rel="noopener noreferer" class="facebook"></a>
-      <a href="#" target="_blank" rel="noopener noreferer" class="instagram"></a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferer"
+        class="instagram"
+      ></a>
     </nav>
   </footer>
 </template>

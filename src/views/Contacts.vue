@@ -1,7 +1,12 @@
 <template>
   <div class="site-content contacts-screen">
     <div class="page-wrap">
-      <div :class="[ pageHeader == 0 ? 'page-header page-header0' : '', pageHeader == 1 ? 'page-header page-header1' : '' ]">
+      <div
+        :class="[
+          pageHeader == 0 ? 'page-header page-header0' : '',
+          pageHeader == 1 ? 'page-header page-header1' : ''
+        ]"
+      >
         <div class="bgs">
           <div class="bg-wrap">
             <div class="bg1"></div>
@@ -15,12 +20,16 @@
         <vue-tabs @tab-change="updateMap">
           <v-tab title="Казань">
             <p>+7 (843) 207-26-95</p>
-            <p>info@apir.pro<br>
-            ул. Щапова 47/7</p>
+            <p>
+              info@apir.pro<br />
+              ул. Щапова 47/7
+            </p>
           </v-tab>
           <v-tab title="Москва">
-            <p>info@apir.pro<br>
-            Большой Саввинский пер., д. 12, стр. 3</p>
+            <p>
+              info@apir.pro<br />
+              Большой Саввинский пер., д. 12, стр. 3
+            </p>
           </v-tab>
         </vue-tabs>
         <GmapMap
@@ -32,9 +41,7 @@
             styles: mapStyles
           }"
         >
-          <GmapMarker
-            :position="{ lat: 55.791856, lng: 49.137643 }"
-          />
+          <GmapMarker :position="{ lat: 55.791856, lng: 49.137643 }" />
         </GmapMap>
       </div>
     </div>

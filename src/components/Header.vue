@@ -1,4 +1,3 @@
-
 <template>
   <header class="header">
     <div class="logo" @click="hideMobileMenu">

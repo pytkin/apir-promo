@@ -1,7 +1,11 @@
 <template>
   <div class="mobile-menu-overlay-container">
     <transition name="overlay-bg">
-      <div class="mobile-menu-overlay-bg" v-show="show" @click="hideMobileOverlay"></div>
+      <div
+        class="mobile-menu-overlay-bg"
+        v-show="show"
+        @click="hideMobileOverlay"
+      ></div>
     </transition>
     <transition name="overlay">
       <div class="mobile-menu-overlay" v-if="show">
@@ -26,8 +30,18 @@
         <div class="mobile-overlay-footer">
           <nav class="mobile-soc-nav">
             <a href="#" target="_blank" rel="noopener noreferer" class="vk"></a>
-            <a href="#" target="_blank" rel="noopener noreferer" class="facebook"></a>
-            <a href="#" target="_blank" rel="noopener noreferer" class="instagram"></a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferer"
+              class="facebook"
+            ></a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferer"
+              class="instagram"
+            ></a>
           </nav>
           <a href="mailto:info@apir.pro" class="contact-email">info@apir.pro</a>
         </div>

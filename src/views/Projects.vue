@@ -5,33 +5,60 @@
       <div class="text-wrap">
         <div class="page-number">04</div>
         <h2 class="page-title">Наши проекты</h2>
-        <p>Мы разрабатываем и внедряем сложные информационные системы.<br>О некоторых из них мы можем вам рассказать.</p>
-        <router-link class="more-link" to="/projects/all">Посмотреть все проекты компании</router-link>
+        <p>
+          Мы разрабатываем и внедряем сложные информационные системы.<br />О
+          некоторых из них мы можем вам рассказать.
+        </p>
+        <router-link class="more-link" to="/projects/all"
+          >Посмотреть все проекты компании</router-link
+        >
       </div>
-      <new-flickity class="projects-wrap" ref="flickity" :options="flickityOptions">
+      <new-flickity
+        class="projects-wrap"
+        ref="flickity"
+        :options="flickityOptions"
+      >
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image1 + ')' }"></div>
-          <div class="title">Комплексная система<br>управления отходами</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image1 + ')' }"
+          ></div>
+          <div class="title">Комплексная система<br />управления отходами</div>
         </div>
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image2 + ')' }"></div>
-          <div class="title">Мониторинг<br>культуры</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image2 + ')' }"
+          ></div>
+          <div class="title">Мониторинг<br />культуры</div>
         </div>
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image3 + ')' }"></div>
-          <div class="title">Спортивный<br>портал</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image3 + ')' }"
+          ></div>
+          <div class="title">Спортивный<br />портал</div>
         </div>
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image4 + ')' }"></div>
-          <div class="title">Спортивная<br>академия</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image4 + ')' }"
+          ></div>
+          <div class="title">Спортивная<br />академия</div>
         </div>
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image5 + ')' }"></div>
-          <div class="title">Управление<br>спортивными объектами</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image5 + ')' }"
+          ></div>
+          <div class="title">Управление<br />спортивными объектами</div>
         </div>
         <div class="item">
-          <div class="bg" v-bind:style="{ 'background-image': 'url(' + image6 + ')' }"></div>
-          <div class="title">Управление<br>мероприятиями</div>
+          <div
+            class="bg"
+            v-bind:style="{ 'background-image': 'url(' + image6 + ')' }"
+          ></div>
+          <div class="title">Управление<br />мероприятиями</div>
         </div>
       </new-flickity>
       <button type="button" class="page-transition-handle-btn">Далее</button>
